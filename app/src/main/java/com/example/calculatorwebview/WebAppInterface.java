@@ -14,7 +14,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class WebAppInterface {
     Context context;
     View view;
-    int result = 0;
+    double result = 0;
 
     public WebAppInterface(Context context, View view) {
         this.context = context;
@@ -23,25 +23,25 @@ public class WebAppInterface {
 
     @JavascriptInterface
     public void addNumbers(String number1, String number2){
-        result = Integer.parseInt(number1) + Integer.parseInt(number2);
+        result = Double.parseDouble(number1) + Double.parseDouble(number2);
         showAlert(String.valueOf(result),"Resultado");
     }
 
     @JavascriptInterface
     public void subtractNumbers(String number1, String number2){
-        result = Integer.parseInt(number1) - Integer.parseInt(number2);
+        result = Double.parseDouble(number1) - Double.parseDouble(number2);
         showAlert(String.valueOf(result),"Resultado");
     }
 
     @JavascriptInterface
     public void multiplyNumbers(String number1, String number2){
-        result = Integer.parseInt(number1) * Integer.parseInt(number2);
+        result = Double.parseDouble(number1) * Double.parseDouble(number2);
         showAlert(String.valueOf(result),"Resultado");
     }
 
     @JavascriptInterface
     public void divideNumbers(String number1, String number2){
-        result = Integer.parseInt(number1) / Integer.parseInt(number2);
+        result = Double.parseDouble(number1) / Double.parseDouble(number2);
         showAlert(String.valueOf(result),"Resultado");
     }
 
