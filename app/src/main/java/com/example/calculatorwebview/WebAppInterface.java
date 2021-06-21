@@ -22,26 +22,26 @@ public class WebAppInterface {
     }
 
     @JavascriptInterface
-    public void addNumbers(int number1, int number2){
-        result = number1 + number2;
+    public void addNumbers(String number1, String number2){
+        result = Integer.parseInt(number1) + Integer.parseInt(number2);
         showAlert(String.valueOf(result),"Resultado");
     }
 
     @JavascriptInterface
-    public void subtractNumbers(int number1, int number2){
-        result = number1 - number2;
+    public void subtractNumbers(String number1, String number2){
+        result = Integer.parseInt(number1) - Integer.parseInt(number2);
         showAlert(String.valueOf(result),"Resultado");
     }
 
     @JavascriptInterface
-    public void multiplyNumbers(int number1, int number2){
-        result = number1 * number2;
+    public void multiplyNumbers(String number1, String number2){
+        result = Integer.parseInt(number1) * Integer.parseInt(number2);
         showAlert(String.valueOf(result),"Resultado");
     }
 
     @JavascriptInterface
-    public void divideNumbers(int number1, int number2){
-        result = number1 / number2;
+    public void divideNumbers(String number1, String number2){
+        result = Integer.parseInt(number1) / Integer.parseInt(number2);
         showAlert(String.valueOf(result),"Resultado");
     }
 
@@ -56,12 +56,7 @@ public class WebAppInterface {
         alert.setMessage(message);
         alert.setCancelable(false);
 
-        alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
+        alert.setPositiveButton(R.string.ok, (dialogInterface, i) -> dialogInterface.cancel());
 
         AlertDialog alertDialog = alert.create();
         alertDialog.show();

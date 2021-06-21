@@ -12,7 +12,7 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String DIRECTION = "http://chano.mipropia.com/webApp/";
+    public static String DIRECTION = "https://chano64123.github.io/Pruebas_GitHub_Page/";
 
     private WebView webView;
 
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         ConstraintLayout view = findViewById(R.id.layout);
 
-        webView = (WebView)findViewById(R.id.webView);
+        webView = findViewById(R.id.webView);
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        WebView webView = (WebView)findViewById(R.id.webView);
+        WebView webView = findViewById(R.id.webView);
         if((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()){
             webView.goBack();
             return true;
